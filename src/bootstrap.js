@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Router, Switch, Route } from "react-router-dom";
 import Header from "./components/header";
 import reducers from "./reducers";
 import thunk from 'redux-thunk';
@@ -10,6 +10,7 @@ import thunk from 'redux-thunk';
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 
 import "./style/main.scss";
+import history from "./history";
 
 //our components
 import Signin from "./components/auth/signin";
@@ -19,7 +20,7 @@ import Newsletter from "./components/newsletter/newsletter";
 function main() {
   ReactDOM.render(
     <Provider store={createStoreWithMiddleware(reducers)}>
-      <BrowserRouter>
+      <Router history={history}>
        <Header>
          <Switch>
            <Route path="/signin" component={Signin}></Route>
@@ -28,7 +29,7 @@ function main() {
 
          </Switch>
        </Header>
-      </BrowserRouter>
+      </Router>
     </Provider>,
     document.querySelector(".app-wrapper")
   );
