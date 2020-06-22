@@ -29,9 +29,10 @@ class Signin extends Component {
 }
 
 function mapStateToProps(state) {
-        return { state }
-};
-
+    return {
+        state
+    }
+}
 
 Signin = reduxForm({form: "signin"})(Signin)
 export default connect(mapStateToProps, actions)(Signin);
