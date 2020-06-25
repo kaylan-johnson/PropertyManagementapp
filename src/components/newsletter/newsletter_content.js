@@ -10,8 +10,13 @@ class NewsletterContent extends Component {
                     <div>
                         <img src={this.props.latestItem.imageUrl}/>
                             <h2>{this.props.latestItem.title}</h2>
+
                             <Link to={`/newsletter/edit/${this.props.latestItem._id}`}>
-                            <div>EditNewsletter</div>
+                                <div>EditNewsletter</div>
+
+                            </Link>
+                            <Link to={`/newsletter/add`}>
+                                <div>AddNewsletter</div>
 
                             </Link>
                     </div>
