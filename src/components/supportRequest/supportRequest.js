@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import * as actions from "../../actions";
 import SupportRequestContent from './supportRequest_content';
 
+import { Link } from 'react-router-dom';
+
 class SupportRequest extends Component {
 
     componentDidMount() {
@@ -17,7 +19,9 @@ class SupportRequest extends Component {
             <div>
                 support request component
                <div>
-                   <div>add request</div>
+                   <Link to="/support-request/add">
+                        <div>add request</div>
+                    </Link>
                    <div className="row">
                         <div className="col-md-3">
                              <InfoBox type="pending"/>
