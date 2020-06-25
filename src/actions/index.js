@@ -84,6 +84,8 @@ export function saveNewNewsletter({title, body}, callback) {
 }
 
 
+
+
 //
 //
 
@@ -125,6 +127,21 @@ export function saveSupportRequestEdit({title, body}, callback) {
         })
             .then(response => {
                dispatch(fetchSupportRequests(() => {
+                callback()
+               }))
+               
+
+            })
+    }
+}
+
+export function saveNewSupportRequest({title, body}, callback) {
+    return function(dispatch) {
+        axios.post(`${ROOT_URL}/support-request/add`, {title, body}, {
+            headers: { authorization: localStorage.getItem('token') }
+        })
+            .then(response => {
+               dispatch(fetchNewsletterArchive(() => {
                 callback()
                }))
                
