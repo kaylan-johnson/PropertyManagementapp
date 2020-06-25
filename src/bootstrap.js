@@ -20,7 +20,10 @@ import Newsletter from "./components/newsletter/newsletter";
 import NewsletterDetail from "./components/newsletter/newsletter_detail";
 import EditNewsletter from "./components/newsletter/newsletter_edit";
 import AddNewsletter from "./components/newsletter/newsletter_add";
+
 import SupportRequest from "./components/supportRequest/supportRequest";
+import EditSupportRequest from "./components/supportRequest/supportRequest_edit";
+
 
 function main() {
   ReactDOM.render(
@@ -38,6 +41,8 @@ function main() {
            <Route path="/newsletter/add" component={AddNewsletter}></Route>
 
            <Route path="/support-request" exact component={SupportRequest}></Route>
+           <Route path="/support-request/edit/:_id" component={EditSupportRequest}></Route>
+
 
           
 
