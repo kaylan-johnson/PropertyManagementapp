@@ -3,8 +3,9 @@ import React, { Component } from 'react';
 class Header extends Component {
   render() {
     return (
-      <div className='app'>
-        <h1>Header sdfjklasdfjas dfkas</h1>
+      <div className="main-header">
+        <h1>Welcome to the HOA Manager!</h1>
+        <p>Please log in to continue</p>
         {this.props.children}
       </div>
     );
