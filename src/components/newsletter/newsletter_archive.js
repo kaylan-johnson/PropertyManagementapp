@@ -42,4 +42,6 @@ class NewsletterArchive extends Component {
     }
 }
 
+// this is a comment
+
 export default NewsletterArchive;
