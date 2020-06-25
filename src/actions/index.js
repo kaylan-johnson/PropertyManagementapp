@@ -38,6 +38,15 @@ export function fetchNewsletterArchive(callback) {
     }
 }
 
+export function fetchNewsletterById(_id) {
+    return (
+        {
+        type: FETCH_NEWSLETTER_BY_ID,
+        payload: _id
+        }
+    )
+}
+
 export function saveNewsletterEdit({title, body}, _id, callback) {
     return function(dispatch) {
         axios.put(`${ROOT_URL}/newsletter/edit/${_id}`, {title, body}, {
@@ -53,12 +62,19 @@ export function saveNewsletterEdit({title, body}, _id, callback) {
     }
 }
 
+export function saveNewNewsletter({title, body}, callback) {
+    return function(dispatch) {
+        axios.post(`${ROOT_URL}/newsletter/add`, {title, body}, {
+            headers: { authorization: localStorage.getItem('token') }
+        })
+            .then(response => {
+               dispatch(fetchNewsletterArchive(() => {
+                callback()
+               }))
+               
 
-export function fetchNewsletterById(_id) {
-    return (
-        {
-        type: FETCH_NEWSLETTER_BY_ID,
-        payload: _id
-        }
-    )
+            })
+    }
 }
+
+
