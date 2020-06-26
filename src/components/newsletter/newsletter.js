@@ -6,6 +6,8 @@ import * as actions from "../../actions";
 import NewsletterArchive from './newsletter_archive';
 import NewsletterContent from './newsletter_content';
 
+import addHeaderNav from '../HOC/addHeaderNav';
+
 
 class Newsletter extends Component {
 
@@ -37,6 +39,8 @@ function mapStateToProps(state) {
         latestItem: state.newsletter.latestItem
      }
 }
+
+Newsletter = addHeaderNav(Newsletter)
 
 export default connect(mapStateToProps, actions)(Newsletter);
 
