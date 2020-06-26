@@ -41,4 +41,7 @@ function mapStateToProps(state) {
 }
 
 Signin = reduxForm({form: "signin"})(Signin)
-export default connect(mapStateToProps, actions)(addHeaderBorder(addTitle(Signin, "Login"))); 
+Signin = addTitle(Signin, "Login");
+Signin = addHeaderBorder(Signin);
+
+export default connect(mapStateToProps, actions)(Signin); 
