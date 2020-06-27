@@ -15,12 +15,12 @@ class NewsletterContent extends Component {
 
                             <Link to={`/newsletter/edit/${this.props.latestItem._id}`}>
                                 <div className="action edit-newsletter">
-                                    <FontAwesomeIcon icon="pencil-alt"/>
+                                    <FontAwesomeIcon icon={pencil-alt}/>
                                 </div>
                             </Link>
                             <Link to={`/newsletter/add`}>
                                 <div className="action add-newsletter">
-                                    <FontAwesomeIcon icon="plus"/>
+                                    <FontAwesomeIcon icon={plus}/>
                                 </div>
                             </Link>
                     </div>
